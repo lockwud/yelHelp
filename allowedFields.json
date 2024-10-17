@@ -1,0 +1,72 @@
+[
+  {
+    "modelName": "",
+    "fields": []
+  },
+  {
+    "modelName": "client",
+    "fields": [
+      "provider"
+    ]
+  },
+  {
+    "modelName": "db",
+    "fields": [
+      "provider",
+      "url"
+    ]
+  },
+  {
+    "modelName": "user",
+    "fields": [
+      "id",
+      "fullname",
+      "gender",
+      "email",
+      "password",
+      "contact",
+      "photoUrl",
+      "photoKey",
+      "otp",
+      "verified",
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  {
+    "modelName": "doctor",
+    "fields": [
+      "id",
+      "firstname",
+      "surname",
+      "othername",
+      "email",
+      "password",
+      "contact",
+      "photoUrl",
+      "photoKey",
+      "otp",
+      "otpexpires",
+      "token",
+      "tokenexpires",
+      "createdAt",
+      "updatedAt",
+      "del_flag"
+    ]
+  },
+  {
+    "modelName": "message",
+    "fields": [
+      "id",
+      "userId"
+    ]
+  },
+  {
+    "modelName": "gender",
+    "fields": [
+      "male",
+      "female",
+      "trans"
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+	"dependencies": {
+		"@loancrate/prisma-schema-parser": "^2.0.0",
+		"@prisma/client": "^5.21.0",
+		"@types/express": "^5.0.0",
+		"@types/multer": "^1.4.12",
+		"@types/node": "^22.7.5",
+		"bcrypt": "^5.1.1",
+		"cloudinary": "^2.5.1",
+		"dotenv": "^16.4.5",
+		"express": "^4.21.1",
+		"husky": "^9.1.6",
+		"morgan": "^1.10.0",
+		"multer": "1.4.5-lts.1",
+		"nodemon": "^3.1.7",
+		"prisma": "^5.21.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3",
+		"zod": "^3.23.8"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"start": "node dist/server.js",
+		"dev": "nodemon server.ts",
+		"build": "tsc",
+		"migrate": "npx prisma migrate dev --name init && pnpm extra:fields",
+		"generate": "npx prisma generate",
+		"extra:fields": "ts-node extractFields.ts"
+	}
+}
