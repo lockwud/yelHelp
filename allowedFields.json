@@ -25,6 +25,7 @@
       "email",
       "password",
       "contact",
+      "address",
       "photoUrl",
       "photoKey",
       "otp",
@@ -52,13 +53,6 @@
       "createdAt",
       "updatedAt",
       "del_flag"
-    ]
-  },
-  {
-    "modelName": "message",
-    "fields": [
-      "id",
-      "userId"
     ]
   },
   {
