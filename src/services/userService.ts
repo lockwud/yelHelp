@@ -3,6 +3,7 @@ import { HttpStatus } from "../utils/httpStatusCode";
 import {prisma} from "../utils/prismaUtil"
 import{userSchema, userDto} from "../validators/userSchema"
 import {passwordHasher, passwordVerifier} from "../utils/bcrypt"
+import { user } from "@prisma/client";
 
 export const userService = {
     async createUser(data: userDto, picture: {photoUrl: string, photoKey: string}){
@@ -35,7 +36,7 @@ export const userService = {
                 return userWithoutPasssword
             }}},
 
-            async updateUser(id: string, data: userDto){
+            async updateUser(id: string, data: Partial <user>){
                 const validate = userSchema.safeParse(data)
                 if(!validate.success){
                     const errors = validate.error.issues.map(

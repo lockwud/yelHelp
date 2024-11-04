@@ -5,6 +5,7 @@ import { HttpStatus } from "../utils/httpStatusCode";
 import { ErrorResponse } from './../utils/types';
 import { userDto } from "../validators/userSchema";
 import cloudinary from "../utils/cloudinary"
+import { generateOtp, sendOtpEmail } from "../utils/otpSender";
 
 
 
@@ -44,7 +45,10 @@ export const userController = {
       try{
         const {email, password } = req.body
         const user = await userService.signIn(email, password)
-        res.status(HttpStatus.OK).json({message:"Login successful", user})
+        const otp = generateOtp();
+        await userService.updateUser(user.id, {otp})
+        await sendOtpEmail(email, otp)
+        res.status(HttpStatus.OK).json({message: " OTP sent to your email. PLease verify to complete the login"})
 
       }catch(error){
         const err = error as ErrorResponse;

@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
-import HttpException from "./http-error";
-import { HttpStatus } from "./http-status";
+import { HttpException } from "./httpError";
+import { HttpStatus } from "./httpStatusCode";
 export const generateOtp = (): string => {
     return Math.floor(100000 + Math.random() * 900000).toString();
   };

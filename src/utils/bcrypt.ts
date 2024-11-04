@@ -1,4 +1,4 @@
-import * as bcrypt from "bcrypt"
+import * as bcrypt from 'bcrypt'
 
 export const passwordHasher = {
     async hashPassword(password: string): Promise<string>{
